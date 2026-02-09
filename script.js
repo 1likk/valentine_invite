@@ -17,18 +17,18 @@ function createHearts() {
 
 createHearts();
 
-// Кнопка "Да"
+// Кнопка Да
 const yesBtn = document.getElementById('yessir');
 const noBtn = document.getElementById('nooo');
 const mainContent = document.getElementById('mainContent');
 const successScreen = document.getElementById('successScreen');
 
-// Кнопка "Да" - показываем экран успеха
+
 yesBtn.addEventListener('click', () => {
     mainContent.style.display = 'none';
     successScreen.style.display = 'block';
     
-    // Создаем много сердечек при нажатии
+ 
     for (let i = 0; i < 50; i++) {
         setTimeout(() => {
             createConfettiHeart();
@@ -51,7 +51,7 @@ function createConfettiHeart() {
     setTimeout(() => heart.remove(), 3000);
 }
 
-// Добавляем анимацию для конфетти
+// Добавляем анимацию 
 const style = document.createElement('style');
 style.textContent = `
     @keyframes confettiFall {
@@ -63,11 +63,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Убегающая кнопка "Нет"
+
 function moveButton() {
     const btnRect = noBtn.getBoundingClientRect();
-    
-    // Случайная позиция в пределах видимой области
+  
     const maxX = window.innerWidth - btnRect.width - 20;
     const maxY = window.innerHeight - btnRect.height - 20;
     
