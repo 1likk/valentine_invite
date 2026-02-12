@@ -63,8 +63,14 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+let yesScale = 1 
 
 function moveButton() {
+    yesScale += 0.2;
+    yesBtn.style.transform = `scale(${yesScale})`;
+
+    yesBtn.style.transition = 'transform 0.3s ease-out';
+    
     const btnRect = noBtn.getBoundingClientRect();
   
     const maxX = window.innerWidth - btnRect.width - 20;
@@ -80,4 +86,7 @@ function moveButton() {
 }
 
 noBtn.addEventListener('mouseover', moveButton);
-noBtn.addEventListener('touchstart', moveButton);
+noBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault(); 
+    moveButton();
+});
